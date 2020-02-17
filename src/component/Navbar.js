@@ -8,7 +8,7 @@ class Navbar extends Component {
   };
 
   handleActive = e => {
-    if (e.target.tagName.toLowerCase() === "a") {
+    if (e.target.tagName.toLowerCase() === "div") {
       document.querySelectorAll(".nav-link").forEach(item => {
         item.classList.remove("active");
       });
@@ -42,16 +42,18 @@ class Navbar extends Component {
             className="navbar-nav mr-auto"
           >
             <li className="nav-item mr-1">
-              <a className="nav-link text-white active">Popular Movies</a>
+              <div className="nav-link font-weight-bold active">
+                Popular Movies
+              </div>
             </li>
             <li className="nav-item mr-1">
-              <a className="nav-link text-white">Upcoming Movies</a>
+              <div className="nav-link font-weight-bold">Upcoming Movies</div>
             </li>
             <li className="nav-item mr-1">
-              <a className="nav-link text-white">Search</a>
+              <div className="nav-link font-weight-bold">Search</div>
             </li>
             <li className="nav-item mr-1">
-              <a className="nav-link text-white">Favorites</a>
+              <div className="nav-link font-weight-bold">Favorites</div>
             </li>
           </ul>
         </div>

@@ -1,0 +1,33 @@
+.nav-link {
+    box-shadow: 0px 5px 0px rgb(21, 28, 36);
+    cursor: pointer;
+    color: rgb(124, 168, 135);
+}
+
+.active {
+    box-shadow: 0px 5px 0px teal;
+}
+
+.overlay-container {
+    position: relative;
+}
+
+.overlay-right {
+    position: absolute;
+    top: 3px;
+    right: 20px;
+    border-radius: 10%;
+    background-color: rgba(0, 0, 0, 0.808);
+}
+
+.overlay-left {
+    position: absolute;
+    top: 3px;
+    left: 20px;
+    border-radius: 10%;
+    background-color: rgba(0, 0, 0, 0.808);
+}
+
+.overlay-left i {
+    color: gold
+}
