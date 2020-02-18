@@ -18,7 +18,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className="navbar navbar-expand-sm">
+      <nav className="navbar navbar-expand-md">
         <button
           onClick={this.handleCollapse}
           className="navbar-toggler"
@@ -42,18 +42,20 @@ class Navbar extends Component {
             className="navbar-nav mr-auto"
           >
             <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold active">
+              <div className="nav-link font-weight-bold active h5">
                 Popular Movies
               </div>
             </li>
             <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold">Upcoming Movies</div>
+              <div className="nav-link font-weight-bold h5">
+                Upcoming Movies
+              </div>
             </li>
             <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold">Search</div>
+              <div className="nav-link font-weight-bold h5">Search</div>
             </li>
             <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold">Favorites</div>
+              <div className="nav-link font-weight-bold h5">Favorites</div>
             </li>
           </ul>
         </div>

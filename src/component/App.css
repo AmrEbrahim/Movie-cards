@@ -12,6 +12,20 @@
     position: relative;
 }
 
+.overlay-container {
+    transition: all 0.2s ease-in-out;
+}
+
+.overlay-container:hover {
+    transform: scale(1.08);
+    transition: all 0.2s ease-in-out;
+}
+
+.overlay-container:hover:after {
+    transform: scale(1);
+    transition: all 0.2s ease-in-out;
+}
+
 .overlay-right {
     position: absolute;
     top: 3px;

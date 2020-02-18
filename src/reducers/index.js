@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-
+import Movies from "./Movies";
 export default combineReducers({
-  replaceMe: "hi there"
+  getMovies: Movies
 });
