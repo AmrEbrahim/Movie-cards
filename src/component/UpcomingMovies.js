@@ -1,17 +1,17 @@
 import React, { Component } from "react";
-import { fetchMovies } from "../actions";
+import { fetchUpcomingMovies } from "../actions";
 import { connect } from "react-redux";
 import MovieDetails from "./MovieDetails";
 
 class PupularMovies extends Component {
   componentDidMount() {
-    this.props.fetchMovies();
+    this.props.fetchUpcomingMovies();
   }
   render() {
     return (
       <div className="">
         <p className="h3 ml-3 mt-3" style={{ color: "rgb(124, 168, 135)" }}>
-          Currently trending movies.
+          Movies releasing in the next 3 months.
         </p>
         <div className="px-5 py-4">
           <div className="row d-flex justify-content-center align-items-center">
@@ -31,4 +31,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps, { fetchMovies })(PupularMovies);
+export default connect(mapStateToProps, { fetchUpcomingMovies })(PupularMovies);

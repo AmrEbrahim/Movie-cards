@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
   handleCollapse = () => {
@@ -8,7 +9,7 @@ class Navbar extends Component {
   };
 
   handleActive = e => {
-    if (e.target.tagName.toLowerCase() === "div") {
+    if (e.target.tagName.toLowerCase() === "a") {
       document.querySelectorAll(".nav-link").forEach(item => {
         item.classList.remove("active");
       });
@@ -41,21 +42,25 @@ class Navbar extends Component {
             }}
             className="navbar-nav mr-auto"
           >
-            <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold active h5">
+            <li className="nav-item mr-2">
+              <Link to="/" className="nav-link font-weight-bold active h5 px-2">
                 Popular Movies
-              </div>
+              </Link>
             </li>
-            <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold h5">
+            <li className="nav-item mr-2">
+              <Link
+                id="upcoming"
+                to="/upcoming"
+                className="nav-link font-weight-bold h5 px-2"
+              >
                 Upcoming Movies
-              </div>
+              </Link>
             </li>
-            <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold h5">Search</div>
+            <li className="nav-item mr-2">
+              <div className="nav-link font-weight-bold h5 px-2">Search</div>
             </li>
-            <li className="nav-item mr-1">
-              <div className="nav-link font-weight-bold h5">Favorites</div>
+            <li className="nav-item mr-2">
+              <div className="nav-link font-weight-bold h5 px-2">Favorites</div>
             </li>
           </ul>
         </div>
