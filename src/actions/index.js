@@ -16,4 +16,17 @@ export const fetchUpcomingMovies = () => async dispatch => {
 export const fetchMovie = id => async dispatch => {
   const response = await Moviedb.get(`movie/${id}?api_key=${KEY}`);
   dispatch({ type: "FETCH_MOVIE", payload: response.data });
+  // console.log(response.data);
+};
+
+export const fetchImages = id => async dispatch => {
+  const response = await Moviedb.get(`movie/${id}/images?api_key=${KEY}`);
+  dispatch({ type: "FETCH_IMAGES", payload: response.data });
+  // console.log(response.data);
+};
+
+export const fetchVideos = id => async dispatch => {
+  const response = await Moviedb.get(`movie/${id}/videos?api_key=${KEY}`);
+  dispatch({ type: "FETCH_VIEDOS", payload: response.data });
+  console.log(response.data);
 };

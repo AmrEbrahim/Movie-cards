@@ -25,7 +25,7 @@ class MovieDetails extends Component {
         className="col-4 col-xs-6 col-sm-4 col-md-3 col-xl-2 my-3 overlay-container"
         to={`/MovieInfo/${this.props.Movie.id}`}
       >
-        {console.log(this.props.Movie)}
+        {/* {console.log(this.props.Movie)} */}
         <img
           className="card-img"
           src={`https://image.tmdb.org/t/p/w500/${this.props.Movie.poster_path}`}
@@ -40,7 +40,7 @@ class MovieDetails extends Component {
           </div>
         )}
         {this.props.Movie.vote_average > 0 ? (
-          <div className="d-flex align-items-baseline p-1 overlay-left">
+          <div className="d-flex align-items-baseline p-1 overlay-left gold">
             <i className="fa fa-star mr-1"></i>
             <p className="text-white m-0">{this.props.Movie.vote_average}</p>
           </div>
