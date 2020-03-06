@@ -28,7 +28,11 @@ class MovieDetails extends Component {
         {/* {console.log(this.props.Movie)} */}
         <img
           className="card-img"
-          src={`https://image.tmdb.org/t/p/w500/${this.props.Movie.poster_path}`}
+          src={
+            this.props.Movie.poster_path
+              ? `https://image.tmdb.org/t/p/w500/${this.props.Movie.poster_path}`
+              : "/imageNotFound.jpg"
+          }
           alt="imagePoster"
         />
         {this.getDuration(this.props.Movie.runtime) === null ? null : (

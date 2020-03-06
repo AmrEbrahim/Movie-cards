@@ -57,7 +57,9 @@ class Navbar extends Component {
               </Link>
             </li>
             <li className="nav-item mr-2">
-              <div className="nav-link font-weight-bold h5 px-2">Search</div>
+              <Link to="/search" className="nav-link font-weight-bold h5 px-2">
+                Search
+              </Link>
             </li>
             <li className="nav-item mr-2">
               <div className="nav-link font-weight-bold h5 px-2">Favorites</div>

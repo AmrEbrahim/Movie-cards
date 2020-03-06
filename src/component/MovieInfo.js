@@ -41,7 +41,7 @@ class MovieInfo extends Component {
         <Link to="/" className="btn btn-primary backBtn">
           Back
         </Link>
-        <div className="col-3 d-flex justify-content-center align-items-center flex-column">
+        <div className="col-8 col-sm-5 pt-5 col-md-3 d-flex justify-content-center align-items-center flex-column">
           <div className="w-75">
             <img
               className="card-img"
@@ -66,7 +66,7 @@ class MovieInfo extends Component {
             Add to List
           </div>
         </div>
-        <div className="col-6 d-flex justify-content-center flex-column p-5">
+        <div className="col-12 col-md-6 d-flex justify-content-center flex-column p-5 Movie-info">
           <div className="">
             <p className="h1 text-white">{this.props.movie.original_title}</p>
             <p className="font-weight-bold text-white m-0">
@@ -110,34 +110,42 @@ class MovieInfo extends Component {
             </div>
           </div>
         </div>
-        <div className="col-3 w-100 d-flex justify-content-center align-items-center flex-column posterContainer">
+        <div className="col-12 col-md-3 w-100 d-flex justify-content-center align-items-center flex-column posterContainer">
           <div className="poster-image p-3">
-            <img
-              className="img-fluid"
-              alt="posterImage"
-              src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[0].file_path}`}
-            />
+            {this.props.images.backdrops[0] ? (
+              <img
+                className="img-fluid"
+                alt="posterImage"
+                src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[0].file_path}`}
+              />
+            ) : null}
           </div>
           <div className="poster-image p-3">
-            <img
-              className="img-fluid"
-              alt="posterImage"
-              src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[1].file_path}`}
-            />
+            {this.props.images.backdrops[1] ? (
+              <img
+                className="img-fluid"
+                alt="posterImage"
+                src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[1].file_path}`}
+              />
+            ) : null}
           </div>
           <div className="poster-image p-3">
-            <img
-              className="img-fluid"
-              alt="posterImage"
-              src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[2].file_path}`}
-            />
+            {this.props.images.backdrops[2] ? (
+              <img
+                className="img-fluid"
+                alt="posterImage"
+                src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[2].file_path}`}
+              />
+            ) : null}
           </div>
           <div className="poster-image p-3">
-            <img
-              className="img-fluid"
-              alt="posterImage"
-              src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[3].file_path}`}
-            />
+            {this.props.images.backdrops[3] ? (
+              <img
+                className="img-fluid"
+                alt="posterImage"
+                src={`https://image.tmdb.org/t/p/w500${this.props.images.backdrops[3].file_path}`}
+              />
+            ) : null}
           </div>
         </div>
       </div>

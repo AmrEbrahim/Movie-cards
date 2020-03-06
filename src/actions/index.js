@@ -30,3 +30,11 @@ export const fetchVideos = id => async dispatch => {
   dispatch({ type: "FETCH_VIEDOS", payload: response.data });
   console.log(response.data);
 };
+
+export const fetchSearch = id => async dispatch => {
+  const response = await Moviedb.get(
+    `/search/movie?api_key=${KEY}&query=${id}`
+  );
+  dispatch({ type: "FETCH_SEARCH", payload: response.data.results });
+  console.log(response.data.results);
+};
