@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { fetchUpcomingMovies } from "../actions";
 import { connect } from "react-redux";
-import MovieDetails from "./MovieDetails";
+import UpcomingMovieDetails from "./UpcomingMovieDetails";
 
 class UpcomingMovies extends Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ class UpcomingMovies extends Component {
         <div className="px-5 py-4">
           <div className="row d-flex justify-content-center align-items-center">
             {this.props.movies.map(movie => (
-              <MovieDetails key={movie.id} Movie={movie} />
+              <UpcomingMovieDetails key={movie.id} Movie={movie} />
             ))}
           </div>
         </div>
@@ -27,7 +27,7 @@ class UpcomingMovies extends Component {
 
 const mapStateToProps = state => {
   return {
-    movies: Object.values(state.getMovies)
+    movies: Object.values(state.getUpcoming)
   };
 };
 
