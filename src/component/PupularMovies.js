@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { fetchMovies } from "../actions";
 import { connect } from "react-redux";
 import MovieDetails from "./MovieDetails";
-import Navbar from "./Navbar";
 
 class PupularMovies extends Component {
   componentDidMount() {
@@ -11,7 +10,6 @@ class PupularMovies extends Component {
   render() {
     return (
       <div className="">
-        <Navbar />
         <p className="h3 ml-3 mt-3" style={{ color: "rgb(124, 168, 135)" }}>
           Currently trending movies.
         </p>

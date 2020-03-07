@@ -25,7 +25,6 @@ class MovieDetails extends Component {
         className="col-4 col-xs-6 col-sm-4 col-md-3 col-xl-2 my-3 overlay-container"
         to={`/MovieInfo/${this.props.Movie.id}`}
       >
-        {/* {console.log(this.props.Movie)} */}
         <img
           className="card-img"
           src={
@@ -54,4 +53,8 @@ class MovieDetails extends Component {
   }
 }
 
-export default connect(null, { fetchMovie })(MovieDetails);
+const mapStateToProps = (state, ownProps) => {
+  return { movie: state.getMovies };
+};
+
+export default connect(mapStateToProps, { fetchMovie })(MovieDetails);

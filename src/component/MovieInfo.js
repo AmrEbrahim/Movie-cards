@@ -41,7 +41,7 @@ class MovieInfo extends Component {
         <Link to="/" className="btn btn-primary backBtn">
           Back
         </Link>
-        <div className="col-8 col-sm-5 pt-5 col-md-3 d-flex justify-content-center align-items-center flex-column">
+        <div className="col-8 col-sm-5 pt-5 col-lg-3 d-flex justify-content-center align-items-center flex-column">
           <div className="w-75">
             <img
               className="card-img"
@@ -66,7 +66,7 @@ class MovieInfo extends Component {
             Add to List
           </div>
         </div>
-        <div className="col-12 col-md-6 d-flex justify-content-center flex-column p-5 Movie-info">
+        <div className="col-12 col-lg-6 d-flex justify-content-center flex-column p-5 Movie-info">
           <div className="">
             <p className="h1 text-white">{this.props.movie.original_title}</p>
             <p className="font-weight-bold text-white m-0">
@@ -110,7 +110,7 @@ class MovieInfo extends Component {
             </div>
           </div>
         </div>
-        <div className="col-12 col-md-3 w-100 d-flex justify-content-center align-items-center flex-column posterContainer">
+        <div className="col-12 col-lg-3 w-100 d-flex justify-content-center align-items-center flex-column posterContainer">
           <div className="poster-image p-3">
             {this.props.images.backdrops[0] ? (
               <img

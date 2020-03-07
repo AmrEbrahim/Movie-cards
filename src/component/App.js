@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
 
+import Navbar from "./Navbar";
 import PupularMovies from "./PupularMovies";
 import UpcomingMovies from "./UpcomingMovies";
 import MovieInfo from "./MovieInfo";
@@ -14,6 +15,11 @@ const App = () => {
   return (
     <div className="fluid-container">
       <BrowserRouter>
+        <Route
+          path={["/", "/upcoming", "/search"]}
+          exact
+          component={Navbar}
+        ></Route>
         <Route path="/" exact component={PupularMovies}></Route>
         <Route path="/upcoming" exact component={UpcomingMovies}></Route>
         <Route path="/search" exact component={Search}></Route>

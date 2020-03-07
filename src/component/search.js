@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { fetchSearch } from "../actions";
 import { connect } from "react-redux";
 import MovieDetails from "./MovieDetails";
-import Navbar from "./Navbar";
 
 class Search extends Component {
   state = { term: "" };
@@ -13,7 +12,6 @@ class Search extends Component {
   render() {
     return (
       <div className="">
-        <Navbar />
         <div className="px-5 py-4">
           <form onSubmit={this.onFormSubmit}>
             <input
@@ -39,7 +37,7 @@ class Search extends Component {
 
 const mapStateToProps = state => {
   return {
-    movies: Object.values(state.getSearch)
+    movies: Object.values(state.getMovies)
   };
 };
 

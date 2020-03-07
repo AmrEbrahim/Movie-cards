@@ -8,15 +8,6 @@ class Navbar extends Component {
     document.querySelector("#navbarSupportedContent").classList.toggle("show");
   };
 
-  handleActive = e => {
-    if (e.target.tagName.toLowerCase() === "a") {
-      document.querySelectorAll(".nav-link").forEach(item => {
-        item.classList.remove("active");
-      });
-      e.target.classList.add("active");
-    }
-  };
-
   render() {
     return (
       <nav className="navbar navbar-expand-md">
@@ -36,14 +27,14 @@ class Navbar extends Component {
           className="collapse navbar-collapse hide"
           id="navbarSupportedContent"
         >
-          <ul
-            onClick={e => {
-              this.handleActive(e);
-            }}
-            className="navbar-nav mr-auto"
-          >
+          <ul className="navbar-nav mr-auto">
             <li className="nav-item mr-2">
-              <Link to="/" className="nav-link font-weight-bold active h5 px-2">
+              <Link
+                to="/"
+                className={`${
+                  this.props.location.pathname === "/" ? "active" : null
+                } nav-link font-weight-bold h5 px-2`}
+              >
                 Popular Movies
               </Link>
             </li>
@@ -51,13 +42,20 @@ class Navbar extends Component {
               <Link
                 id="upcoming"
                 to="/upcoming"
-                className="nav-link font-weight-bold h5 px-2"
+                className={`${
+                  this.props.location.pathname === "/upcoming" ? "active" : null
+                } nav-link font-weight-bold h5 px-2`}
               >
                 Upcoming Movies
               </Link>
             </li>
             <li className="nav-item mr-2">
-              <Link to="/search" className="nav-link font-weight-bold h5 px-2">
+              <Link
+                to="/search"
+                className={`${
+                  this.props.location.pathname === "/search" ? "active" : null
+                } nav-link font-weight-bold h5 px-2`}
+              >
                 Search
               </Link>
             </li>
