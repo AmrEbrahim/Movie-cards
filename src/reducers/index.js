@@ -1,14 +1,12 @@
 import { combineReducers } from "redux";
-import Movies from "./Movies";
-import Images from "./images";
-import Videos from "./videos";
-import Search from "./SearchReducer";
-import UpcomingMovie from "./UpcomingMovie";
+import moviesList from "./movies-list";
+import movies from "./movie";
+import images from "./images";
+import videos from "./videos";
 
 export default combineReducers({
-  getMovies: Movies,
-  getImages: Images,
-  getVideos: Videos,
-  getSearch: Search,
-  getUpcoming: UpcomingMovie
+  moviesList,
+  images,
+  videos,
+  movies
 });
