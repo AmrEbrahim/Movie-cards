@@ -155,9 +155,9 @@ class MovieInfo extends Component {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    movie: state.getMovies[ownProps.match.params.id],
-    images: state.getImages[ownProps.match.params.id],
-    videos: state.getVideos[ownProps.match.params.id]
+    movie: state.movies[ownProps.match.params.id],
+    images: state.images[ownProps.match.params.id],
+    videos: state.videos[ownProps.match.params.id]
   };
 };
 

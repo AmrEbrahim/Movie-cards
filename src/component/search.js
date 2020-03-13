@@ -1,10 +1,13 @@
 import React, { Component } from "react";
-import { fetchSearch } from "../actions";
+import { fetchSearch, clearMovies } from "../actions";
 import { connect } from "react-redux";
 import SearchMovieDetails from "./SearchMovieDetails";
 
 class Search extends Component {
   state = { term: "" };
+  componentDidMount() {
+    this.props.clearMovies();
+  }
   onFormSubmit = e => {
     e.preventDefault();
     this.props.fetchSearch(this.state.term);
@@ -25,9 +28,18 @@ class Search extends Component {
             </button>
           </form>
           <div className="row d-flex justify-content-center align-items-center">
-            {this.props.movies.map(movie => (
-              <SearchMovieDetails key={movie.id} Movie={movie} />
-            ))}
+            {this.state.loading ? (
+              <div className="d-flex flex-column justify-content-center align-items-center">
+                <div className="loader"></div>
+                <p className="text-white">Loading...</p>
+              </div>
+            ) : (
+              <React.Fragment>
+                {this.props.movies.map(movie => (
+                  <SearchMovieDetails key={movie.id} Movie={movie} />
+                ))}
+              </React.Fragment>
+            )}
           </div>
         </div>
       </div>
@@ -37,8 +49,8 @@ class Search extends Component {
 
 const mapStateToProps = state => {
   return {
-    movies: Object.values(state.getSearch)
+    movies: state.moviesList
   };
 };
 
-export default connect(mapStateToProps, { fetchSearch })(Search);
+export default connect(mapStateToProps, { fetchSearch, clearMovies })(Search);

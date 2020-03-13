@@ -4,8 +4,11 @@ import { connect } from "react-redux";
 import UpcomingMovieDetails from "./UpcomingMovieDetails";
 
 class UpcomingMovies extends Component {
-  componentDidMount() {
-    this.props.fetchUpcomingMovies();
+  state = { loading: false };
+  async componentDidMount() {
+    this.setState({ loading: true });
+    await this.props.fetchUpcomingMovies();
+    this.setState({ loading: false });
   }
   render() {
     return (
@@ -15,9 +18,18 @@ class UpcomingMovies extends Component {
         </p>
         <div className="px-5 py-4">
           <div className="row d-flex justify-content-center align-items-center">
-            {this.props.movies.map(movie => (
-              <UpcomingMovieDetails key={movie.id} Movie={movie} />
-            ))}
+            {this.state.loading ? (
+              <div className="d-flex flex-column justify-content-center align-items-center">
+                <div className="loader"></div>
+                <p className="text-white">Loading...</p>
+              </div>
+            ) : (
+              <React.Fragment>
+                {this.props.movies.map(movie => (
+                  <UpcomingMovieDetails key={movie.id} Movie={movie} />
+                ))}
+              </React.Fragment>
+            )}
           </div>
         </div>
       </div>
@@ -27,7 +39,7 @@ class UpcomingMovies extends Component {
 
 const mapStateToProps = state => {
   return {
-    movies: Object.values(state.getUpcoming)
+    movies: state.moviesList
   };
 };
 
