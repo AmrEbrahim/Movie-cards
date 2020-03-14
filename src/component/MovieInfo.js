@@ -28,7 +28,12 @@ class MovieInfo extends Component {
   };
   render() {
     if (!this.props.movie || !this.props.images) {
-      return <div>Loading...</div>;
+      return (
+        <div className="d-flex flex-column justify-content-center align-items-center p-5">
+          <div className="loader m-5"></div>
+          <p className="text-white">Loading...</p>
+        </div>
+      );
     }
     return (
       <div
