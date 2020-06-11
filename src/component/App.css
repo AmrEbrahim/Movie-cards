@@ -50,6 +50,7 @@ a:hover {
 
 .active {
     box-shadow: 0px 5px 0px #EF9917;
+    color: #EF9917;
 }
 
 .overlay-container {
