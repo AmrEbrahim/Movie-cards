@@ -13,7 +13,7 @@ class PupularMovies extends Component {
   render() {
     return (
       <div className="">
-        <p className="h3 ml-3 mt-3" style={{ color: "rgb(124, 168, 135)" }}>
+        <p className="h3 ml-3 mt-3" style={{ color: "#17D1EF" }}>
           Currently trending movies.
         </p>
         <div className="px-5 py-4">
