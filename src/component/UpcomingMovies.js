@@ -13,21 +13,28 @@ class UpcomingMovies extends Component {
   render() {
     return (
       <div className="">
-        <p className="h3 ml-3 mt-3" style={{ color: "#17D1EF" }}>
-          Movies releasing in the next 3 months.
-        </p>
         <div className="px-5 py-4">
           <div className="row d-flex justify-content-center align-items-center">
             {this.state.loading ? (
-              <div className="d-flex flex-column justify-content-center align-items-center">
-                <div className="loader"></div>
-                <p className="text-white">Loading...</p>
+              <div className="loader">
+                <div className="sk-chase">
+                  <div className="sk-chase-dot"></div>
+                  <div className="sk-chase-dot"></div>
+                  <div className="sk-chase-dot"></div>
+                  <div className="sk-chase-dot"></div>
+                  <div className="sk-chase-dot"></div>
+                  <div className="sk-chase-dot"></div>
+                </div>
               </div>
             ) : (
               <React.Fragment>
-                {this.props.movies.map(movie => (
-                  <UpcomingMovieDetails key={movie.id} Movie={movie} />
-                ))}
+                {this.props.movies.length === 0 ? (
+                  <div>“Sorry, no results were found”</div>
+                ) : (
+                  this.props.movies.map((movie) => (
+                    <UpcomingMovieDetails key={movie.id} Movie={movie} />
+                  ))
+                )}
               </React.Fragment>
             )}
           </div>
@@ -37,12 +44,12 @@ class UpcomingMovies extends Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    movies: state.moviesList
+    movies: state.moviesList,
   };
 };
 
 export default connect(mapStateToProps, {
-  fetchUpcomingMovies
+  fetchUpcomingMovies,
 })(UpcomingMovies);

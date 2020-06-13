@@ -1,38 +1,44 @@
 import React, { Component } from "react";
 import { fetchSearch, clearMovies } from "../actions";
 import { connect } from "react-redux";
-import SearchMovieDetails from "./SearchMovieDetails";
+// import SearchMovieDetails from "./SearchMovieDetails";
 
 class Search extends Component {
   state = { term: "" };
   componentDidMount() {
     this.props.clearMovies();
   }
-  onFormSubmit = e => {
+  onFormSubmit = (e) => {
     e.preventDefault();
     this.props.fetchSearch(this.state.term);
   };
   render() {
     return (
-      <div className="">
-        <div className="px-5 py-4">
+      <div className="searchContainer">
+        <div className="">
           <form onSubmit={this.onFormSubmit}>
             <input
-              className="mr-3"
+              className="mr-1"
               value={this.state.term}
-              onChange={e => this.setState({ term: e.target.value })}
+              onChange={(e) => this.setState({ term: e.target.value })}
               placeholder="Search..."
             />
             <button className="searchBtn" type="submit">
               <i className="fa fa-search"></i>
             </button>
           </form>
-          <div className="row d-flex justify-content-center align-items-center">
+          {/* <div className="row d-flex justify-content-center align-items-center">
             {this.state.loading ? (
-              <div className="d-flex flex-column justify-content-center align-items-center">
-                <div className="loader"></div>
-                <p className="text-white">Loading...</p>
-              </div>
+              <div className="loader">
+          <div className="sk-chase">
+            <div className="sk-chase-dot"></div>
+            <div className="sk-chase-dot"></div>
+            <div className="sk-chase-dot"></div>
+            <div className="sk-chase-dot"></div>
+            <div className="sk-chase-dot"></div>
+            <div className="sk-chase-dot"></div>
+          </div>
+        </div>
             ) : (
               <React.Fragment>
                 {this.props.movies.map(movie => (
@@ -40,16 +46,16 @@ class Search extends Component {
                 ))}
               </React.Fragment>
             )}
-          </div>
+          </div>*/}
         </div>
       </div>
     );
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    movies: state.moviesList
+    movies: state.moviesList,
   };
 };
 

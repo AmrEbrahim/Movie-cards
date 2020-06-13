@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Search from "./search";
 
 class Navbar extends Component {
   handleCollapse = () => {
@@ -11,6 +12,9 @@ class Navbar extends Component {
   render() {
     return (
       <nav className="navbar navbar-expand-md">
+        <Link to="/" className="navbar-brand">
+          <img src="/Logo.png" width="100" height="40" alt="" />
+        </Link>
         <button
           onClick={this.handleCollapse}
           className="navbar-toggler"
@@ -30,36 +34,42 @@ class Navbar extends Component {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item mr-2">
               <Link
+                onClick={this.handleCollapse}
                 to="/"
                 className={`${
                   this.props.location.pathname === "/" ? "active" : null
-                } nav-link font-weight-bold h5 px-2`}
+                } nav-link px-2 text-center`}
               >
-                Popular Movies
+                Trending Movies
               </Link>
             </li>
             <li className="nav-item mr-2">
               <Link
+                onClick={this.handleCollapse}
                 id="upcoming"
                 to="/upcoming"
                 className={`${
                   this.props.location.pathname === "/upcoming" ? "active" : null
-                } nav-link font-weight-bold h5 px-2`}
+                } nav-link px-2 text-center`}
               >
                 Upcoming Movies
               </Link>
             </li>
             <li className="nav-item mr-2">
               <Link
-                to="/search"
+                onClick={this.handleCollapse}
+                to="/TopRatedMovies"
                 className={`${
-                  this.props.location.pathname === "/search" ? "active" : null
-                } nav-link font-weight-bold h5 px-2`}
+                  this.props.location.pathname === "/TopRatedMovies"
+                    ? "active"
+                    : null
+                } nav-link px-2 text-center`}
               >
-                Search
+                Top Rated Movies
               </Link>
             </li>
           </ul>
+          <Search />
         </div>
       </nav>
     );

@@ -1,13 +1,13 @@
 import React, { Component } from "react";
-import { fetchMovies } from "../actions";
+import { fetchTopRatedMovies } from "../actions";
 import { connect } from "react-redux";
-import PopularMovieDetails from "./PopularMovieDetails";
+import TopRatedDetails from "./TopRatedDetails";
 
-class PupularMovies extends Component {
+class TopRatedMovies extends Component {
   state = { loading: false };
   async componentDidMount() {
     this.setState({ loading: true });
-    await this.props.fetchMovies();
+    await this.props.fetchTopRatedMovies();
     this.setState({ loading: false });
   }
   render() {
@@ -32,7 +32,7 @@ class PupularMovies extends Component {
                   <div>“Sorry, no results were found”</div>
                 ) : (
                   this.props.movies.map((movie) => (
-                    <PopularMovieDetails key={movie.id} Movie={movie} />
+                    <TopRatedDetails key={movie.id} Movie={movie} />
                   ))
                 )}
               </React.Fragment>
@@ -50,4 +50,6 @@ const mapStateToProps = (state) => {
   };
 };
 
-export default connect(mapStateToProps, { fetchMovies })(PupularMovies);
+export default connect(mapStateToProps, { fetchTopRatedMovies })(
+  TopRatedMovies
+);

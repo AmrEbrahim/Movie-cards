@@ -12,15 +12,27 @@ class MovieDetails extends Component {
         className="col-4 col-xs-6 col-sm-4 col-md-3 col-xl-2 my-3 overlay-container"
         to={`/MovieInfo/${this.props.movie.id}`}
       >
-        <img
-          className="card-img"
-          src={
-            this.props.movie.poster_path
-              ? `https://image.tmdb.org/t/p/w500/${this.props.movie.poster_path}`
-              : "/imageNotFound.jpg"
-          }
-          alt="imagePoster"
-        />
+        <div className="overlay-title">
+          <div className="movie-details">
+            <p className="text-center m-0 p-0">{this.props.movie.title}</p>
+            <div className="genre">
+              {this.props.movie.genres.map((genre) => (
+                <span key={genre.id} className="rounded-pill">
+                  {genre.name}
+                </span>
+              ))}
+            </div>
+          </div>
+          <img
+            className="card-img"
+            src={
+              this.props.movie.poster_path
+                ? `https://image.tmdb.org/t/p/w500/${this.props.movie.poster_path}`
+                : "/imageNotFound.jpg"
+            }
+            alt="imagePoster"
+          />
+        </div>
         {this.props.movie.runtime > 0 ? (
           <div className="d-flex align-items-baseline p-1 overlay-right">
             <i className="fa fa-clock-o mr-1 text-white"></i>
