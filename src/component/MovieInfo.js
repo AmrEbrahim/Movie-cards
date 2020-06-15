@@ -75,7 +75,6 @@ class MovieInfo extends Component {
           </p>
           {this.props.videos.results[0] ? (
             <Link
-              to=""
               // target="_blank"
               onClick={this.openTab}
               className="btn btn-primary rounded-pill m-1"
