@@ -114,17 +114,21 @@ class MovieInfo extends Component {
             <p className="">{this.props.movie.overview}</p>
           </div>
           <div className="w-75 pt-5 d-flex justify-content-between align-items-center">
-            <div className="text-white d-flex justify-content-center align-items-center flex-column">
-              <p className="m-0 ">Revenue:</p>
-              <p className="m-0">$ {this.props.movie.revenue}</p>
-            </div>
-            <div className="text-white d-flex justify-content-center align-items-center flex-column">
-              <p className="m-0 ">Budget:</p>
-              <p className="m-0">$ {this.props.movie.budget}</p>
-            </div>
+            {this.props.movie.revenue === 0 ? null : (
+              <div className="text-white d-flex justify-content-center align-items-center flex-column">
+                <p className="m-0 ">Revenue:</p>
+                <p className="m-0">$ {this.props.movie.revenue}</p>
+              </div>
+            )}
+            {this.props.movie.budget === 0 ? null : (
+              <div className="text-white d-flex justify-content-center align-items-center flex-column">
+                <p className="m-0 ">Budget:</p>
+                <p className="m-0">$ {this.props.movie.budget}</p>
+              </div>
+            )}
             <div className="text-white d-flex justify-content-center align-items-center flex-column">
               <p className="m-0 ">Release Date:</p>
-              <p className="m-0">$ {this.props.movie.release_date}</p>
+              <p className="m-0">{this.props.movie.release_date}</p>
             </div>
           </div>
         </div>
