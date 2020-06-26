@@ -247,6 +247,60 @@ a:hover {
     align-items: center;
 }
 
+.Trailar-video {
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    min-height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.Trailar-video .video-iframe {
+    width: 80vw;
+    height: 90vh;
+    z-index: 1000;
+    border-radius: 10px 10px 0 0;
+}
+
+.Trailar-video .video-iframe .movie-title {
+    width: 100%;
+    height: 8%;
+    background: #fff;
+    border-radius: 10px 10px 0 0;
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-title p {
+    color: #1e1e21 !important;
+}
+
+.movie-title button i {
+    color: #1e1e21 !important;
+}
+
+.movie-title button {
+    background: none;
+    border: none;
+    outline: none;
+}
+
+.movie-title button:hover i {
+    color: #df820c
+}
+
+.Trailar-video iframe {
+    width: 100%;
+    height: 90%;
+}
+
 .backBtn {
     position: absolute;
     top: 10px;
@@ -370,5 +424,8 @@ input:focus {
         display: flex;
         justify-content: center;
         align-items: center;
+    }
+    .Trailar-video .video-iframe {
+        height: 60vh !important;
     }
 }
